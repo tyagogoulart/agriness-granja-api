@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "22d9314e-1432-49e4-b288-ed6633368c80",
+		"name": "Granja",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autenticação JWT",
+			"item": [
+				{
+					"name": "Gerar Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						},
+						"description": "Gerar token de autenticação"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "refresh",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYwNDgwMzA4NSwianRpIjoiODNlMWY1M2Y5ZmU2NDA1MDkyNzAyM2I3YjY3Y2NlNzMiLCJ1c2VyX2lkIjoxfQ.hhhE7APo6dAi7nvmBdzGQ3ErPEuBwDNZ5bMTK-u9ano",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						},
+						"description": "Gerar token de autenticação"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Granjas",
+			"item": [
+				{
+					"name": "Lista granjas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODcxMzkxLCJqdGkiOiI0MTg3NjdjOTA3NzI0Y2MwODc1ZThiMjRjNTUyNTRhOCIsInVzZXJfaWQiOjF9.U_v3VcoCTj7ZCpkJM8xZKQkUhSp2Eyi4tjYXg9n3F8M"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/granjas?nome=Granja 3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"granjas"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Granja 3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhe de granja",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODUzMjg4LCJqdGkiOiI4MTQ4NGZmMjBhZTE0YTY0OGI4OWNhZDk0MDZiMzY5YyIsInVzZXJfaWQiOjF9.xQD8Cb9kFMhPEtBvyVBXlL-MHMFiGu1jK2iKo8nOWzw"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/granjas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"granjas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modifica granja",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODU4ODkxLCJqdGkiOiI1NjM2OTJhOGU2ZDE0ZDUzYjljODRkMDE4NzJkZjcxZiIsInVzZXJfaWQiOjF9.wcTkNnsv_5MvxrcBYeN7zZNGxHE1RPTk9xidi9SED9w"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Granja alterada 2\",\n    \"responsavel\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/granjas/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"granjas",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta granja",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODUzMTY5LCJqdGkiOiJmNGY2OWZhYjg1YzQ0ODY5OWM2ZTA4NzE2OWNkODQwNiIsInVzZXJfaWQiOjF9.RwXmIXgCIPiqjdWcD3QAjz8X7SCMQm1ZAOkyMi6epS0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/granjas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"granjas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista animais da granja",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODcyNDQ3LCJqdGkiOiJmM2U2NTg2ODY0MjY0YzIyOWFhZjU4MTk4YWQwZjQzZiIsInVzZXJfaWQiOjF9.gvy2XDLAfAOJFQjUGEsPe1KNhrivzCGTtOpPzTvoU0M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/granjas/1/animais/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"granjas",
+								"1",
+								"animais",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Animais",
+			"item": [
+				{
+					"name": "Lista animais das granjas do usuário",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODYxMTU4LCJqdGkiOiIxYWQzNGVjOTg1NTk0NGU1YWIwMDYzNjNmN2FlYWJhZSIsInVzZXJfaWQiOjF9.K-bmtK1i1VXlEKB2yrGzFyjwdr1140DCenNAEc0S9nk"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/animais",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animais"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhe de animal",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODYxMTU4LCJqdGkiOiIxYWQzNGVjOTg1NTk0NGU1YWIwMDYzNjNmN2FlYWJhZSIsInVzZXJfaWQiOjF9.K-bmtK1i1VXlEKB2yrGzFyjwdr1140DCenNAEc0S9nk"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/animais/20f5a59b-7a44-4301-a594-4fdd95283c11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animais",
+								"20f5a59b-7a44-4301-a594-4fdd95283c11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta animal",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODU5NTYxLCJqdGkiOiIzYWE2ZWQyNDhiOGM0ODdjODI3YmVhY2ZiZTM5ODM1ZSIsInVzZXJfaWQiOjF9.879_InMWqVmcQEWqLpUrxpKjKRhuKp3s8tmvUbLWs0s"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/animais/20f5a59b-7a44-4301-a594-4fdd95283c11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animais",
+								"20f5a59b-7a44-4301-a594-4fdd95283c11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modifica animal",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODYwMjM3LCJqdGkiOiJlZmQ2ZjdlY2NiMDc0NDMxYmNjNjk4NzMxZWU5NDBmYSIsInVzZXJfaWQiOjF9.-NWDMdpTs41Co1f1thG9cJXVhalGJLXTIhCKnwZj5hw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"id\": \"20f5a59b-7a44-4301-a594-4fdd95283c11\",\n            \"fase_producao\": {\n                \"sigla\": \"REC\"\n            },\n            \"tipo_granja\": {\n                \"sigla\": \"URE\"\n            },\n            \"localizacao\": \"Pocilga/LADO B\",\n            \"raca\": \"ac-7077/m\",\n            \"granja\": \"Granja alterada 1\",\n            \"nome\": \"SAX6485\",\n            \"tipo_animal\": \"POULTRY\",\n            \"status_animal\": 2,\n            \"data_nascimento\": \"2017-06-26T02:53:04Z\",\n            \"entrada_plantel\": \"2019-06-16\",\n            \"peso_compra\": 11.993,\n            \"codigo_rastreamento\": \"742B7DC9863349D2A88A9AE6AC3DDABD\"\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/animais/20f5a59b-7a44-4301-a594-4fdd95283c11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animais",
+								"20f5a59b-7a44-4301-a594-4fdd95283c11"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"protocolProfileBehavior": {}
+}
