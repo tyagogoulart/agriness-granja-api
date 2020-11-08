@@ -9,7 +9,6 @@ from django_filters.rest_framework import DjangoFilterBackend
 from .serializers import AnimalSerializer, GranjaSerializer
 from ..models import Animal, Granja
 from .permissions import IsResponsavelPermission
-from .filters import AnimalFilter
 
 class GranjaView(ModelViewSet):
     """
