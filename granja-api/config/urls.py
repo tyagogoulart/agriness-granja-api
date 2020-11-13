@@ -40,6 +40,7 @@ urlpatterns = [
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
     path('api/', include('granja.urls')),
+    path('api/', include('authentication.urls')),
 ]
 
 if settings.DEBUG:
