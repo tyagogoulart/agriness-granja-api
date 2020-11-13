@@ -6,9 +6,10 @@ from rest_framework.response import Response
 from rest_framework.permissions import DjangoModelPermissions, IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 
-from .serializers import AnimalSerializer, GranjaSerializer
-from ..models import Animal, Granja
+from .serializers import AnimalSerializer, GranjaSerializer, LocalizacaoSerializer
+from ..models import Animal, Granja, Localizacao
 from .permissions import IsResponsavelPermission
+from .filters import AnimalFilter
 
 class GranjaView(ModelViewSet):
     """
@@ -18,8 +19,7 @@ class GranjaView(ModelViewSet):
         destroy: Deleta uma granja específica.
     """
     serializer_class = GranjaSerializer
-    http_method_names = ['get', 'put', 'delete']
-    filterset_fields = ('nome')
+    filterset_fields = ['nome']
 
     def get_permissions(self):
         permission_classes = [IsAuthenticated]
@@ -39,7 +39,7 @@ class GranjaView(ModelViewSet):
         """
         user = self.request.user
         queryset = Animal.objects.filter(granja__usuarios=user, granja__id=pk)
-        self.filterset_fields = ('nome', 'localizacao')
+        self.filterset_class = AnimalFilter
         qs = self.filter_queryset(queryset)
         page = self.paginate_queryset(qs)
 
@@ -49,6 +49,23 @@ class GranjaView(ModelViewSet):
         else:
             serializer_class = AnimalSerializer(qs, many=True)
             
+        return Response(serializer_class.data)
+
+    @action(detail=True, methods=['get'])
+    def localizacoes(self, request, pk=None):
+        """
+            Retorna a lista de localizações de uma granja. 
+        """
+        queryset = Localizacao.objects.filter(granja__id=pk) 
+        qs = self.filter_queryset(queryset)
+        page = self.paginate_queryset(qs)
+
+        if page is not None:
+            serializer_class = LocalizacaoSerializer(page, many=True)
+            return self.get_paginated_response(serializer_class.data)
+        else:
+            serializer_class = LocalizacaoSerializer(qs, many=True)
+        
         return Response(serializer_class.data)
 
 class AnimalView(ModelViewSet):
@@ -63,7 +80,6 @@ class AnimalView(ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-        print (self.request.query_params)
         return Animal.objects.filter(granja__usuarios=user)
 
     def get_permissions(self):
