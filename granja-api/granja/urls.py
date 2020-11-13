@@ -15,48 +15,14 @@ _detail = {'get': 'retrieve',
            'put': 'update',
            'delete': 'destroy'}
 
-_animais_list = {'get': 'animais'}
+_animais_read_only = {'get': 'animais'}
+_localizacoes_read_only = {'get': 'localizacoes'}
 
 urlpatterns = [
-    path('granjas/', GranjaView.as_view(_read_only), name='granja-list'),
+    path('granjas/', GranjaView.as_view(_list), name='granja-list'),
     path('granjas/<int:pk>', GranjaView.as_view(_detail), name='granja-detail'),
-    path('granjas/<int:pk>/animais/', GranjaView.as_view(_animais_list), name='granja-animais'),
+    path('granjas/<int:pk>/animais/', GranjaView.as_view(_animais_read_only), name='granja-animais'),
+    path('granjas/<int:pk>/localizacoes/', GranjaView.as_view(_localizacoes_read_only), name='granja-localizacoes'),
     path('animais/', AnimalView.as_view(_read_only), name='animal-list'),
-    path('animais/<uuid:pk>', AnimalView.as_view(_detail), name='animal-detail'),
-
-    # path('clientes/', ClienteView.as_view(_list), name='cliente-list'),
-    # path('clientes/<int:pk>/', ClienteView.as_view(_detail), name='cliente-detail'),
-
-    # path('setores/', SetorView.as_view(_list), name='setor-list'),
-    # path('setores/<int:pk>/', SetorView.as_view(_detail), name='setor-detail'),
-    
-    # path('orgaos/', OrgaoView.as_view(_list), name='orgao-list'),
-    # path('orgaos/<int:pk>/', OrgaoView.as_view(_detail), name='orgao-detail'),
+    path('animais/<uuid:pk>/', AnimalView.as_view(_detail), name='animal-detail'),
 ]
-
-# router = NestedDefaultRouter()
-
-# projetos_router = router.register(
-#     r'projetos', 
-#     ProjetoView, 
-#     base_name='projetos'
-# )
-# projetos_router.register(
-#     r'participantes', 
-#     ParticipanteView, 
-#     basename='projeto-participantes',
-#     parents_query_lookups=['projeto']
-# )
-# projetos_router.register(
-#     r'infraestruturas', 
-#     InfraestruturaView, 
-#     basename='projeto-infraestruturas',
-#     parents_query_lookups=['projeto']
-# )
-
-# #router.register(r'projetos', ProjetoView, base_name='projetos')
-# router.register(r'perfis', PerfilView, base_name='perfis')
-# router.register(r'setores', SetorView, base_name='setores')
-# router.register(r'clientes', ClienteView, base_name='clientes')
-
-# urlpatterns = router.urls
