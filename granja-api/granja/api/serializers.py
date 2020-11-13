@@ -1,6 +1,11 @@
 from rest_framework import serializers
 
-from ..models import Animal, FaseProducao, TipoGranja, Granja
+from ..models import Animal, FaseProducao, TipoGranja, Granja, Localizacao
+
+class LocalizacaoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Localizacao
+        fields = ['id', 'granja', 'nome']
 
 class FaseProducaoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,7 +27,7 @@ class AnimalSerializer(serializers.ModelSerializer):
     tipo_granja = TipoGranjaSerializer(read_only=True)
     localizacao = serializers.StringRelatedField()
     raca = serializers.StringRelatedField()
-    granja = serializers.StringRelatedField()
+    granja = serializers.PrimaryKeyRelatedField(read_only=True)
     
     class Meta:
         model = Animal
