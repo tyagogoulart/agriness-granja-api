@@ -6,7 +6,7 @@ class IsResponsavelPermission(BasePermission):
     
     def has_object_permission(self, request, view, obj):
         if request.user:
-            if obj.granja:
+            if hasattr(obj, 'granja'):
                 return obj.granja.responsavel == request.user
             return obj.responsavel == request.user
 
