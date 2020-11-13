@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+AUTH_USER_MODEL = 'authentication.EmailUser'
 
 # Application definition
 
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     'django_filters',
 
     'granja.apps.GranjaConfig',
+    'authentication.apps.AuthenticationConfig'
 ]
 
 MIDDLEWARE = [
@@ -85,7 +87,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'granja',
+        'NAME': 'granjas',
         'USER': 'postgres',
         'PASSWORD': 'c1s9a13',
         'HOST': 'localhost',
@@ -159,5 +161,5 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=20)
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5)
 }
