@@ -18,9 +18,10 @@ class TipoGranjaSerializer(serializers.ModelSerializer):
         fields = ['id', 'descricao', 'sigla']
 
 class GranjaSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Granja
-        fields = ['id', 'nome', 'responsavel']
+        fields = ['id', 'nome', 'responsavel', 'endereco', 'quantidade_animais']
 
 class AnimalSerializer(serializers.ModelSerializer):
     fase_producao = FaseProducaoSerializer(read_only=True)

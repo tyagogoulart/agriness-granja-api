@@ -4,8 +4,13 @@ import uuid
 
 class Granja(models.Model):
     nome = models.CharField("Nome da Granja", max_length=150)
+    endereco = models.CharField("Endereço da Granja", max_length=400)
     responsavel = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="granja_responsavel", verbose_name="Responsável", on_delete=models.PROTECT)
     usuarios = models.ManyToManyField(settings.AUTH_USER_MODEL)
+
+    @property
+    def quantidade_animais(self):
+        return self.animal_set.count()
 
     def __str__(self):
         return self.nome
