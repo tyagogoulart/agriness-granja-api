@@ -1,11 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 import uuid
 
 class Granja(models.Model):
     nome = models.CharField("Nome da Granja", max_length=150)
-    responsavel = models.ForeignKey(User, related_name="granja_responsavel", verbose_name="Responsável", on_delete=models.PROTECT)
-    usuarios = models.ManyToManyField(User)
+    responsavel = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="granja_responsavel", verbose_name="Responsável", on_delete=models.PROTECT)
+    usuarios = models.ManyToManyField(settings.AUTH_USER_MODEL)
 
     def __str__(self):
         return self.nome
