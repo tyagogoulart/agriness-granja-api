@@ -20,6 +20,17 @@ Para facilitar a inicialização do projeto, é possível iniciá-lo com as fixt
 
 `python manage.py loaddata granja/data/dados_completos.json`
 
+Os usuários do fixtures são:
+
+Responsável das granjas 1 e 2
+
+`login: tyagogoulartn@gmail.com senha: admin123`
+
+Responsável da granja 3
+
+`login: teste@email.com senha: 123`
+
+
 Ou caso prefira, você pode criar manualmente os dados, para isso crie o superuser para acessar a administração (http://localhost:8000/admin)
 
 `python manage.py createsuperuser`
