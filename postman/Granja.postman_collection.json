@@ -17,22 +17,30 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "username",
-									"value": "admin",
+									"key": "email",
+									"value": "tyagogoulartn@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "123456",
+									"value": "admin123",
 									"type": "text"
 								}
-							]
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/token/",
+							"raw": "http://10.0.0.101:8000/api/token/",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"10",
+								"0",
+								"0",
+								"101"
 							],
 							"port": "8000",
 							"path": [
@@ -55,16 +63,19 @@
 							"urlencoded": [
 								{
 									"key": "refresh",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYwNDgwMzA4NSwianRpIjoiODNlMWY1M2Y5ZmU2NDA1MDkyNzAyM2I3YjY3Y2NlNzMiLCJ1c2VyX2lkIjoxfQ.hhhE7APo6dAi7nvmBdzGQ3ErPEuBwDNZ5bMTK-u9ano",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYwNTIxNjI1NywianRpIjoiNWM5ZjUxZDA4NmM1NDk1M2FjNzQyYWQ3MzI3NjcxZGUiLCJ1c2VyX2lkIjoxfQ.HOyf-Wa8xu3YsClYY9FJo6ZTK30_GZ_9YuLRvQTD8fI",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/token/refresh/",
+							"raw": "http://10.0.0.101:8000/api/token/refresh/",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"10",
+								"0",
+								"0",
+								"101"
 							],
 							"port": "8000",
 							"path": [
@@ -92,25 +103,22 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODcxMzkxLCJqdGkiOiI0MTg3NjdjOTA3NzI0Y2MwODc1ZThiMjRjNTUyNTRhOCIsInVzZXJfaWQiOjF9.U_v3VcoCTj7ZCpkJM8xZKQkUhSp2Eyi4tjYXg9n3F8M"
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjg0NTg5LCJqdGkiOiJmMDZkOGVjMWQyZDg0MWRiODg2MjZjYjg3MjhjN2Q4OCIsInVzZXJfaWQiOjF9.UYfHnN_KFPWRdx7h6aOFUK0sg_UxLHx2uWadEaoI3tU"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/granjas?nome=Granja 3",
+							"raw": "http://10.0.0.101:8000/api/granjas",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"10",
+								"0",
+								"0",
+								"101"
 							],
 							"port": "8000",
 							"path": [
 								"api",
 								"granjas"
-							],
-							"query": [
-								{
-									"key": "nome",
-									"value": "Granja 3"
-								}
 							]
 						}
 					},
@@ -124,7 +132,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODUzMjg4LCJqdGkiOiI4MTQ4NGZmMjBhZTE0YTY0OGI4OWNhZDk0MDZiMzY5YyIsInVzZXJfaWQiOjF9.xQD8Cb9kFMhPEtBvyVBXlL-MHMFiGu1jK2iKo8nOWzw"
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODg4NDM0LCJqdGkiOiI5ZDFlN2M2ZWE0YTY0MTI5ODljN2M4OTcyNWU0M2MyZiIsInVzZXJfaWQiOjF9.qXKbvJ2tyVxl7QSnlUzhpnP6UrECjshEbTH-O1pBV1A"
 							}
 						],
 						"url": {
@@ -187,7 +195,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODUzMTY5LCJqdGkiOiJmNGY2OWZhYjg1YzQ0ODY5OWM2ZTA4NzE2OWNkODQwNiIsInVzZXJfaWQiOjF9.RwXmIXgCIPiqjdWcD3QAjz8X7SCMQm1ZAOkyMi6epS0"
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODg4NDM0LCJqdGkiOiI5ZDFlN2M2ZWE0YTY0MTI5ODljN2M4OTcyNWU0M2MyZiIsInVzZXJfaWQiOjF9.qXKbvJ2tyVxl7QSnlUzhpnP6UrECjshEbTH-O1pBV1A"
 							}
 						],
 						"body": {
@@ -222,22 +230,57 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODcyNDQ3LCJqdGkiOiJmM2U2NTg2ODY0MjY0YzIyOWFhZjU4MTk4YWQwZjQzZiIsInVzZXJfaWQiOjF9.gvy2XDLAfAOJFQjUGEsPe1KNhrivzCGTtOpPzTvoU0M",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NTY5MTUzLCJqdGkiOiJkMjhhNTI4NGM1ZmI0NGQwOGVhZThmM2MzNmI0N2MxZCIsInVzZXJfaWQiOjF9.smB-ydrq_4FkI6RmfI7y_His3nzJaJZCUolCo9Rh8LY",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/granjas/1/animais/",
+							"raw": "http://10.0.0.101:8000/api/granjas/3/animais/",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"10",
+								"0",
+								"0",
+								"101"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"granjas",
+								"3",
+								"animais",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista localizações da granja",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1MjA5MjIwLCJqdGkiOiI1Mjk3M2IzYWE0ZmE0ZDlmOTQwZjExNmFjNDk1YzhmZSIsInVzZXJfaWQiOjF9.g28MPoYXrIeQ0v8pWGSaDYGgtCWJsiuZKeCEyA15l5U"
+							}
+						],
+						"url": {
+							"raw": "http://10.0.0.101:8000/api/granjas/1/localizacoes/",
+							"protocol": "http",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"101"
 							],
 							"port": "8000",
 							"path": [
 								"api",
 								"granjas",
 								"1",
-								"animais",
+								"localizacoes",
 								""
 							]
 						}
@@ -277,33 +320,6 @@
 					"response": []
 				},
 				{
-					"name": "Detalhe de animal",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODYxMTU4LCJqdGkiOiIxYWQzNGVjOTg1NTk0NGU1YWIwMDYzNjNmN2FlYWJhZSIsInVzZXJfaWQiOjF9.K-bmtK1i1VXlEKB2yrGzFyjwdr1140DCenNAEc0S9nk"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8000/api/animais/20f5a59b-7a44-4301-a594-4fdd95283c11",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"animais",
-								"20f5a59b-7a44-4301-a594-4fdd95283c11"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Deleta animal",
 					"request": {
 						"method": "DELETE",
@@ -311,20 +327,24 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODU5NTYxLCJqdGkiOiIzYWE2ZWQyNDhiOGM0ODdjODI3YmVhY2ZiZTM5ODM1ZSIsInVzZXJfaWQiOjF9.879_InMWqVmcQEWqLpUrxpKjKRhuKp3s8tmvUbLWs0s"
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NTY5MTUzLCJqdGkiOiJkMjhhNTI4NGM1ZmI0NGQwOGVhZThmM2MzNmI0N2MxZCIsInVzZXJfaWQiOjF9.smB-ydrq_4FkI6RmfI7y_His3nzJaJZCUolCo9Rh8LY"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/animais/20f5a59b-7a44-4301-a594-4fdd95283c11",
+							"raw": "http://10.0.0.101:8000/api/animais/e600c84b-8f5f-40b0-b892-859055c1d735/",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"10",
+								"0",
+								"0",
+								"101"
 							],
 							"port": "8000",
 							"path": [
 								"api",
 								"animais",
-								"20f5a59b-7a44-4301-a594-4fdd95283c11"
+								"e600c84b-8f5f-40b0-b892-859055c1d735",
+								""
 							]
 						}
 					},
@@ -338,7 +358,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA0ODYwMjM3LCJqdGkiOiJlZmQ2ZjdlY2NiMDc0NDMxYmNjNjk4NzMxZWU5NDBmYSIsInVzZXJfaWQiOjF9.-NWDMdpTs41Co1f1thG9cJXVhalGJLXTIhCKnwZj5hw"
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1MjU1MDQ4LCJqdGkiOiI1NmQxNjU3Y2RhMWQ0YmZiOGY2NjI5MDk5NmNmNTFlZiIsInVzZXJfaWQiOjF9.aa-itnvxoqwO_AuycFSiVk41GzPvfVduQJZ0Ao8l6Cs"
 							}
 						],
 						"body": {
@@ -351,16 +371,146 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/animais/20f5a59b-7a44-4301-a594-4fdd95283c11",
+							"raw": "http://10.0.0.101:8000/api/animais/20f5a59b-7a44-4301-a594-4fdd95283c11/",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"10",
+								"0",
+								"0",
+								"101"
 							],
 							"port": "8000",
 							"path": [
 								"api",
 								"animais",
-								"20f5a59b-7a44-4301-a594-4fdd95283c11"
+								"20f5a59b-7a44-4301-a594-4fdd95283c11",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhe de animal",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NTY5MDYwLCJqdGkiOiJiY2Y5MDU5ODZjZjA0MTM3YjY1ZmIyZWQ1OWQ4ZTNlYSIsInVzZXJfaWQiOjF9.egtrUVhmkM_S5COORYVkC4E9IG05nqEfAjbjQM6weqs"
+							}
+						],
+						"url": {
+							"raw": "http://10.0.0.101:8000/api/animais/8092021a-0076-43b2-b053-ab9bf08f117a",
+							"protocol": "http",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"101"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animais",
+								"8092021a-0076-43b2-b053-ab9bf08f117a"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Listar usuários",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1MjQzODU1LCJqdGkiOiIwZTEyZTgxYWJhNGE0OGFhODUxZWY4ZGFmZDZiZThlNiIsInVzZXJfaWQiOjF9.LOfdc0OnBj_79muZCH3bq3U8Wzp1AJ6NasC6xejV8fA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://10.0.0.101:8000/api/usuarios/",
+							"protocol": "http",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"101"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhe de usuário",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1MjQzODU1LCJqdGkiOiIwZTEyZTgxYWJhNGE0OGFhODUxZWY4ZGFmZDZiZThlNiIsInVzZXJfaWQiOjF9.LOfdc0OnBj_79muZCH3bq3U8Wzp1AJ6NasC6xejV8fA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://10.0.0.101:8000/api/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"101"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Perfil do usuário",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1MjQ1NDY0LCJqdGkiOiJhMWM5Yjk2OTNkNDA0YTVhODE2NTM3N2JkYTFjM2E5OCIsInVzZXJfaWQiOjF9.t2M6a495Io9gXOfmk3Lz9_FM_ldhsMcRYFQ_OVAtQ6s"
+							}
+						],
+						"url": {
+							"raw": "http://10.0.0.101:8000/api/usuarios/perfil",
+							"protocol": "http",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"101"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"usuarios",
+								"perfil"
 							]
 						}
 					},
